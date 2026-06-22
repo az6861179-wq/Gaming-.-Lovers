@@ -96,109 +96,22 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .header-actions{display:flex;align-items:center;gap:10px}
 
 /* THEME TOGGLE */
-:root{
-  --bg-primary:#0d0d1a;
-  --bg-secondary:#131326;
-  --bg-card:#1a1a2e;
-  --bg-card-hover:#1f1f3a;
-  --border:#2a2a45;
-  --text-primary:#ffffff;
-  --text-secondary:#a0a0c0;
-  --text-muted:#606080;
-  --accent:#e74c3c;
-  --accent2:#3498db;
-  --accent3:#2ecc71;
-  --gold:#f5a623;
-  --nav-bg:rgba(13,13,26,0.97);
-  --shadow:0 4px 30px rgba(0,0,0,0.4);
-  --input-bg:#1a1a2e;
-  --filter-bg:#1a1a2e;
-}
-body.light-mode{
-  --bg-primary:#f0f2f8;
-  --bg-secondary:#e4e8f5;
-  --bg-card:#ffffff;
-  --bg-card-hover:#f8f9ff;
-  --border:#d0d5e8;
-  --text-primary:#1a1a2e;
-  --text-secondary:#4a4a6a;
-  --text-muted:#8a8aaa;
-  --nav-bg:rgba(255,255,255,0.97);
-  --shadow:0 4px 20px rgba(0,0,0,0.1);
-  --input-bg:#ffffff;
-  --filter-bg:#ffffff;
-}
- 
-body{font-family:'Tajawal',sans-serif;background:var(--bg-primary);color:var(--text-primary);transition:background .3s,color .3s;overflow-x:hidden}
- 
-/* ===== LOADING ===== */
-#loadingScreen{position:fixed;inset:0;background:linear-gradient(135deg,#0d0d1a,#1a0a2e);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s,visibility .6s;gap:30px}
-#loadingScreen.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.loader-logo{font-size:22px;font-weight:900;color:#fff}
-.loader-logo span{background:linear-gradient(90deg,#e74c3c,#3498db,#2ecc71);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.loader-sub{font-size:13px;color:rgba(255,255,255,0.4);letter-spacing:2px;text-transform:uppercase;margin-top:-20px}
- 
-/* ===== GHOST CSS ===== */
-#ghost{position:relative;scale:0.8}
-#red{animation:upNDown infinite 0.5s;position:relative;width:140px;height:140px;display:grid;grid-template-columns:repeat(14,1fr);grid-template-rows:repeat(14,1fr);grid-column-gap:0;grid-row-gap:0;grid-template-areas:"a1 a2 a3 a4 a5 top0 top0 top0 top0 a10 a11 a12 a13 a14" "b1 b2 b3 top1 top1 top1 top1 top1 top1 top1 top1 b12 b13 b14" "c1 c2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 c13 c14" "d1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 d14" "e1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 e14" "f1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 f14" "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4" "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4" "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4" "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4" "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4" "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4" "st0 st0 an4 st1 an7 st2 an10 an10 st3 an13 st4 an16 st5 st5" "an1 an2 an3 an5 an6 an8 an9 an9 an11 an12 an14 an15 an17 an18"}
-@keyframes upNDown{0%,49%{transform:translateY(0)}50%,100%{transform:translateY(-10px)}}
-#top0,#top1,#top2,#top3,#top4,#st0,#st1,#st2,#st3,#st4,#st5{background-color:red}
-#top0{grid-area:top0}#top1{grid-area:top1}#top2{grid-area:top2}#top3{grid-area:top3}#top4{grid-area:top4}
-#st0{grid-area:st0}#st1{grid-area:st1}#st2{grid-area:st2}#st3{grid-area:st3}#st4{grid-area:st4}#st5{grid-area:st5}
-#an1{grid-area:an1;animation:flicker0 infinite 0.5s}#an18{grid-area:an18;animation:flicker0 infinite 0.5s}
-#an2{grid-area:an2;animation:flicker1 infinite 0.5s}#an17{grid-area:an17;animation:flicker1 infinite 0.5s}
-#an3{grid-area:an3;animation:flicker1 infinite 0.5s}#an16{grid-area:an16;animation:flicker1 infinite 0.5s}
-#an4{grid-area:an4;animation:flicker1 infinite 0.5s}#an15{grid-area:an15;animation:flicker1 infinite 0.5s}
-#an5{grid-area:an5}#an6{grid-area:an6;animation:flicker0 infinite 0.5s}
-#an7{grid-area:an7;animation:flicker0 infinite 0.5s}#an8{grid-area:an8;animation:flicker0 infinite 0.5s}
-#an9{grid-area:an9;animation:flicker1 infinite 0.5s}#an10{grid-area:an10;animation:flicker1 infinite 0.5s}
-#an11{grid-area:an11;animation:flicker0 infinite 0.5s}#an12{grid-area:an12;animation:flicker0 infinite 0.5s}
-#an13{grid-area:an13;animation:flicker0 infinite 0.5s}#an14{grid-area:an14}
-@keyframes flicker0{0%,49%{background-color:red}50%,100%{background-color:transparent}}
-@keyframes flicker1{0%,49%{background-color:transparent}50%,100%{background-color:red}}
-#eye{width:40px;height:50px;position:absolute;top:30px;left:10px}
-#eye::before{content:"";background-color:white;width:20px;height:50px;transform:translateX(10px);display:block;position:absolute}
-#eye::after{content:"";background-color:white;width:40px;height:30px;transform:translateY(10px);display:block;position:absolute}
-#eye1{width:40px;height:50px;position:absolute;top:30px;right:30px}
-#eye1::before{content:"";background-color:white;width:20px;height:50px;transform:translateX(10px);display:block;position:absolute}
-#eye1::after{content:"";background-color:white;width:40px;height:30px;transform:translateY(10px);display:block;position:absolute}
-#pupil{width:20px;height:20px;background-color:blue;position:absolute;top:50px;left:10px;z-index:1;animation:eyesMovement infinite 3s}
-#pupil1{width:20px;height:20px;background-color:blue;position:absolute;top:50px;right:50px;z-index:1;animation:eyesMovement infinite 3s}
-@keyframes eyesMovement{0%,49%{transform:translateX(0)}50%,99%{transform:translateX(10px)}100%{transform:translateX(0)}}
-#shadow{background-color:black;width:140px;height:140px;position:absolute;border-radius:50%;transform:rotateX(80deg);filter:blur(20px);top:80%;animation:shadowMovement infinite 0.5s}
-@keyframes shadowMovement{0%,49%{opacity:0.5}50%,100%{opacity:0.2}}
- 
-/* ===== HEADER ===== */
-header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--border);transition:background .3s}
-.header-inner{max-width:1400px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
-.logo{font-size:24px;font-weight:900;color:var(--text-primary);text-decoration:none;display:flex;align-items:center;gap:8px;white-space:nowrap}
-.logo-icon{font-size:26px}
-.logo-text{background:linear-gradient(90deg,#e74c3c,#3498db,#2ecc71);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.search-wrap{flex:1;max-width:460px;display:flex;gap:0;border-radius:10px;overflow:hidden;border:2px solid var(--border);transition:border-color .2s}
-.search-wrap:focus-within{border-color:var(--accent2)}
-.search-wrap input{flex:1;padding:10px 16px;border:none;background:var(--input-bg);color:var(--text-primary);font-family:'Tajawal',sans-serif;font-size:14px;outline:none}
-.search-wrap input::placeholder{color:var(--text-muted)}
-.search-wrap button{background:var(--accent2);border:none;padding:0 18px;color:#fff;font-size:16px;cursor:pointer;transition:background .2s}
-.search-wrap button:hover{background:#2980b9}
-.header-actions{display:flex;align-items:center;gap:10px}
- 
-/* THEME TOGGLE */
 .theme-toggle{display:flex;align-items:center;background:var(--bg-card);border:1px solid var(--border);border-radius:30px;padding:4px;gap:2px}
 .theme-btn{background:none;border:none;cursor:pointer;width:32px;height:28px;border-radius:24px;font-size:14px;transition:all .25s;color:var(--text-secondary);display:flex;align-items:center;justify-content:center}
 .theme-btn.active{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#fff;box-shadow:0 2px 8px rgba(52,152,219,0.4)}
- 
+
 .cart-btn{background:var(--accent);color:#fff;border:none;border-radius:9px;padding:9px 18px;font-family:'Tajawal',sans-serif;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:7px;position:relative;transition:all .2s}
 .cart-btn:hover{background:#c0392b;transform:translateY(-1px)}
 .cart-num{background:#fff;color:var(--accent);border-radius:50%;width:20px;height:20px;font-size:11px;font-weight:900;display:inline-flex;align-items:center;justify-content:center}
 .user-btn{background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);border-radius:9px;padding:9px 14px;font-family:'Tajawal',sans-serif;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;position:relative}
 .user-btn:hover{border-color:var(--accent2)}
- 
+
 .user-dropdown{position:absolute;top:calc(100% + 10px);left:0;min-width:200px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;z-index:50}
 .user-dropdown.open{opacity:1;visibility:visible;transform:translateY(0)}
 .user-dropdown a{display:flex;align-items:center;gap:10px;padding:10px 12px;color:var(--text-secondary);text-decoration:none;border-radius:8px;font-size:14px;transition:all .2s}
 .user-dropdown a:hover{background:var(--bg-card-hover);color:var(--text-primary)}
 .user-dropdown hr{border:none;border-top:1px solid var(--border);margin:6px 0}
- 
+
 /* ===== SUBNAV ===== */
 .subnav{background:var(--bg-secondary);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
 .subnav::-webkit-scrollbar{display:none}
@@ -206,16 +119,16 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .nav-tab{background:none;border:none;color:var(--text-secondary);font-family:'Tajawal',sans-serif;font-size:14px;font-weight:600;padding:14px 20px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;display:flex;align-items:center;gap:6px}
 .nav-tab:hover{color:var(--text-primary);border-bottom-color:var(--border)}
 .nav-tab.active{color:var(--accent2);border-bottom-color:var(--accent2);background:rgba(52,152,219,0.06)}
- 
+
 /* ===== PROMO STRIP ===== */
 .promo-strip{background:linear-gradient(90deg,var(--accent) 0%,#c0392b 100%);color:#fff;padding:9px 0;overflow:hidden;position:relative}
 .promo-inner{display:flex;gap:60px;animation:marquee 22s linear infinite;width:max-content}
 .promo-inner span{white-space:nowrap;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
- 
+
 /* ===== PAGE LAYOUT ===== */
 .page-wrap{max-width:1400px;margin:0 auto;padding:24px}
- 
+
 /* ===== HERO BANNER ===== */
 .hero{background:linear-gradient(135deg,#0d0d1a 0%,#1a0a2e 50%,#0a1a2e 100%);border-radius:18px;padding:48px 48px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:30px;border:1px solid var(--border);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(231,76,60,0.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(52,152,219,0.10) 0%,transparent 60%);pointer-events:none}
@@ -234,7 +147,7 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .hero-stat{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:18px 22px;text-align:center;backdrop-filter:blur(10px)}
 .hero-stat-num{font-size:26px;font-weight:900;color:#fff}
 .hero-stat-label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:2px}
- 
+
 /* ===== FILTER BAR ===== */
 .filter-bar{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;margin-bottom:22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .filter-bar label{font-size:13px;font-weight:700;color:var(--text-secondary);white-space:nowrap}
@@ -243,7 +156,7 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .filter-group{display:flex;align-items:center;gap:8px}
 .results-count{margin-right:auto;font-size:13px;color:var(--text-muted)}
 .results-count strong{color:var(--text-primary)}
- 
+
 /* ===== PRODUCTS GRID ===== */
 .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
 .product-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:all .28s;position:relative}
@@ -272,19 +185,19 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .add-btn:active{transform:scale(.97)}
 .quick-btn{background:var(--bg-secondary);border:1px solid var(--border);border-radius:9px;padding:10px 12px;cursor:pointer;font-size:14px;color:var(--text-secondary);transition:all .2s}
 .quick-btn:hover{background:var(--accent2);color:#fff;border-color:var(--accent2)}
- 
+
 /* ===== SECTION HEADER ===== */
 .sec-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
 .sec-title{font-size:22px;font-weight:800;color:var(--text-primary);display:flex;align-items:center;gap:10px}
 .sec-title::after{content:'';display:inline-block;width:30px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;margin-right:4px}
 .see-all-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);font-family:'Tajawal',sans-serif;font-size:13px;padding:7px 16px;border-radius:8px;cursor:pointer;transition:all .2s}
 .see-all-btn:hover{border-color:var(--accent2);color:var(--accent2)}
- 
+
 /* ===== PAGINATION ===== */
 .pagination{display:flex;justify-content:center;gap:8px;margin-top:32px;flex-wrap:wrap}
 .page-btn{background:var(--bg-card);border:1px solid var(--border);color:var(--text-secondary);border-radius:9px;width:38px;height:38px;font-family:'Tajawal',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
 .page-btn:hover,.page-btn.active{background:var(--accent2);border-color:var(--accent2);color:#fff}
- 
+
 /* ===== PRODUCT MODAL ===== */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s}
 .modal-overlay.open{opacity:1;visibility:visible}
@@ -309,7 +222,7 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .qty-input{width:56px;text-align:center;background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-primary);border-radius:8px;padding:8px;font-family:'Tajawal',sans-serif;font-size:16px;outline:none}
 .modal-add-btn{background:linear-gradient(135deg,var(--accent3),#27ae60);color:#fff;border:none;border-radius:10px;padding:13px;font-family:'Tajawal',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:4px}
 .modal-add-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(46,204,113,0.35)}
- 
+
 /* REVIEWS */
 .reviews-box{border-top:1px solid var(--border);padding:24px 28px}
 .reviews-box h4{font-size:16px;font-weight:700;margin-bottom:14px;color:var(--text-primary)}
@@ -326,7 +239,7 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .rev-textarea:focus{border-color:var(--accent2)}
 .submit-rev-btn{background:var(--accent2);color:#fff;border:none;border-radius:8px;padding:9px 20px;font-family:'Tajawal',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:opacity .2s}
 .submit-rev-btn:hover{opacity:.85}
- 
+
 /* ===== CART SIDEBAR ===== */
 .cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:150;opacity:0;visibility:hidden;transition:all .3s}
 .cart-overlay.open{opacity:1;visibility:visible}
@@ -356,7 +269,7 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .cart-total-row strong{font-size:22px;font-weight:900;color:var(--text-primary)}
 .checkout-btn{width:100%;background:linear-gradient(135deg,var(--accent),#c0392b);color:#fff;border:none;border-radius:10px;padding:14px;font-family:'Tajawal',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s}
 .checkout-btn:hover{opacity:.9;transform:translateY(-1px)}
- 
+
 /* ===== AUTH MODAL ===== */
 .auth-box{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;width:90%;max-width:440px;padding:40px;position:relative;transform:scale(.94);transition:transform .3s}
 .modal-overlay.open .auth-box{transform:scale(1)}
@@ -369,17 +282,17 @@ header{background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filt
 .auth-submit:hover{opacity:.9}
 .auth-switch{text-align:center;font-size:13px;color:var(--text-muted);margin-top:4px}
 .auth-switch a{color:var(--accent2);cursor:pointer;font-weight:600;text-decoration:none}
- 
+
 /* ===== TOAST ===== */
 .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg-card);border:1px solid var(--border);border-right:4px solid var(--accent3);color:var(--text-primary);padding:13px 22px;border-radius:12px;font-size:14px;font-weight:600;box-shadow:var(--shadow);z-index:999;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
- 
+
 /* ===== INSTAGRAM FLOAT ===== */
 .ig-float{position:fixed;bottom:28px;right:24px;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);color:#fff;border:none;border-radius:50%;width:52px;height:52px;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:all .2s;z-index:90;display:flex;align-items:center;justify-content:center;text-decoration:none}
 .ig-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(0,0,0,0.4)}
 .ig-tooltip{position:absolute;bottom:calc(100% + 10px);right:0;background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);padding:7px 12px;border-radius:8px;font-size:12px;white-space:nowrap;box-shadow:var(--shadow);opacity:0;visibility:hidden;transition:all .2s;font-family:'Tajawal',sans-serif;font-weight:700}
 .ig-float:hover .ig-tooltip{opacity:1;visibility:visible}
- 
+
 /* ===== FOOTER ===== */
 footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:48px 24px 24px}
 .footer-inner{max-width:1400px;margin:auto}
@@ -398,7 +311,7 @@ footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding
 .footer-bottom p{color:var(--text-muted);font-size:13px}
 .pay-icons{display:flex;gap:8px}
 .pay-ic{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-size:11px;font-weight:700;color:var(--text-muted)}
- 
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:960px){
   .modal-grid{grid-template-columns:1fr}
@@ -418,7 +331,7 @@ footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding
   .products-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
   .product-img-wrap{height:160px}
 }
- 
+
 /* ===== CIRCULAR GALLERY ===== */
 .cg-section{padding:0 0 32px;position:relative}
 .cg-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;padding:0 4px}
@@ -441,7 +354,180 @@ footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding
 .cg-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
 .cg-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .2s}
 .cg-dot.active{background:var(--accent);width:22px;border-radius:4px}
+
+/* ===== CHROMA GRID ===== */
+.chroma-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), 320px);
+  grid-auto-rows: auto;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  --x: 50%;
+  --y: 50%;
+  --r: 220px;
 }
+
+@media (max-width: 1124px) {
+  .chroma-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 320px));
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chroma-grid {
+    grid-template-columns: 320px;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+}
+
+.chroma-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: border-color 0.3s ease;
+  background: var(--card-gradient);
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(255, 255, 255, 0.3);
+}
+
+.chroma-card:hover {
+  border-color: var(--card-border);
+}
+
+.chroma-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+.chroma-card:hover::before {
+  opacity: 1;
+}
+
+.chroma-img-wrapper {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.chroma-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.chroma-info {
+  position: relative;
+  z-index: 1;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 0.25rem;
+  column-gap: 0.75rem;
+}
+
+.chroma-info .role,
+.chroma-info .handle {
+  color: #aaa;
+}
+
+.chroma-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  backdrop-filter: grayscale(1) brightness(0.78);
+  -webkit-backdrop-filter: grayscale(1) brightness(0.78);
+  background: rgba(0, 0, 0, 0.001);
+  mask-image: radial-gradient(
+    circle var(--r) at var(--x) var(--y),
+    transparent 0%,
+    transparent 15%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.22) 45%,
+    rgba(0, 0, 0, 0.35) 60%,
+    rgba(0, 0, 0, 0.5) 75%,
+    rgba(0, 0, 0, 0.68) 88%,
+    white 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle var(--r) at var(--x) var(--y),
+    transparent 0%,
+    transparent 15%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.22) 45%,
+    rgba(0, 0, 0, 0.35) 60%,
+    rgba(0, 0, 0, 0.5) 75%,
+    rgba(0, 0, 0, 0.68) 88%,
+    white 100%
+  );
+}
+
+.chroma-fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  backdrop-filter: grayscale(1) brightness(0.78);
+  -webkit-backdrop-filter: grayscale(1) brightness(0.78);
+  background: rgba(0, 0, 0, 0.001);
+  mask-image: radial-gradient(
+    circle var(--r) at var(--x) var(--y),
+    white 0%,
+    white 15%,
+    rgba(255, 255, 255, 0.9) 30%,
+    rgba(255, 255, 255, 0.78) 45%,
+    rgba(255, 255, 255, 0.65) 60%,
+    rgba(255, 255, 255, 0.5) 75%,
+    rgba(255, 255, 255, 0.32) 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle var(--r) at var(--x) var(--y),
+    white 0%,
+    white 15%,
+    rgba(255, 255, 255, 0.9) 30%,
+    rgba(255, 255, 255, 0.78) 45%,
+    rgba(255, 255, 255, 0.65) 60%,
+    rgba(255, 255, 255, 0.5) 75%,
+    rgba(255, 255, 255, 0.32) 88%,
+    transparent 100%
+  );
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* ===== LOGO IMAGE ===== */
+.logo-img{height:48px;width:auto;border-radius:10px;object-fit:contain}
 </style>
 </head>
 <body>
@@ -502,7 +588,11 @@ footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo"><span class="logo-icon">🎮</span><span class="logo-text">Gaming Lovers</span></a>
+    <!-- LOGO with image + site name -->
+    <a href="#" class="logo">
+      <img src="75.png" alt="Gaming Lovers" class="logo-img">
+      <span class="logo-text">Gaming Lovers</span>
+    </a>
     <div class="search-wrap">
       <input type="text" id="searchInput" placeholder="ابحث عن منتج، ماركة، فئة...">
       <button onclick="doSearch()">🔍</button>
@@ -767,29 +857,21 @@ footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding
 
 <script>
 // ===== PRODUCTS DATA =====
-// Corrected images and names for Iraqi store with IQD currency
 const PRODUCTS = [
   // ===== CONSOLES =====
-  // PS5 - corrected image (was keyboard)
   {id:2,cat:'consoles',brand:'Sony',name:'PlayStation 5 Slim',price:658000,oldPrice:780000,rating:5,reviews:182,desc:'النسخة المطورة الأخف والأنحف من PS5 مع نفس الأداء المذهل',img:'1 (71).jfif',badge:''},
-  // Xbox
   {id:46,cat:'consoles',brand:'',name:'جهاز العاب زمان',price:198000,oldPrice:278000,rating:5,reviews:67,desc:'جهاز العاب جيل الطيبين يكون معه يدتين و محول بلوتوث و سلك الباور',img:'1 (29).png',badge:''},
   {id:3,cat:'consoles',brand:'Microsoft',name:'Xbox Series X 1TB',price:738000,oldPrice:858000,rating:5,reviews:201,desc:'أسرع Xbox على الإطلاق مع أداء 4K/120fps وتقنية Quick Resume',img:'1 (9).jfif',badge:''},
   {id:4,cat:'consoles',brand:'Microsoft',name:'Xbox Series S Carbon Black',price:438000,oldPrice:538000,rating:4,reviews:143,desc:'جهاز Xbox الصغير الاقتصادي بأداء الجيل الجديد',img:'1 (68).jfif',badge:'خصم 19%'},
-  // Nintendo Switch
   {id:5,cat:'consoles',brand:'Nintendo',name:'Nintendo Switch OLED',price:598000,oldPrice:698000,rating:5,reviews:317,desc:'شاشة OLED نابضة بالألوان للعب في أي مكان مع Joy-Con ملوّنة',img:'1 (41).jfif',badge:''},
   {id:6,cat:'consoles',brand:'Nintendo',name:'Nintendo Switch Lite - Coral',price:318000,oldPrice:398000,rating:4,reviews:228,desc:'جهاز Nintendo محمول خفيف وبسعر ممتاز للعب في أي وقت',img:'1 (42).jfif',badge:''},
   {id:7,cat:'consoles',brand:'Nintendo',name:'Nintendo Switch Neon Blue/Red',price:498000,oldPrice:598000,rating:5,reviews:185,desc:'جهاز Nintendo Switch الكلاسيكي مع Joy-Con ازرق وأحمر',img:'1 (43).jfif',badge:''},
-  // VR - Renamed to VR-PS4
   {id:8,cat:'consoles',brand:'Sony',name:'VR-PS4',price:578000,oldPrice:698000,rating:4,reviews:97,desc:'نظارة الواقع الافتراضي من سوني لتجربة غمر لا مثيل لها',img:'1 (2).jfif',badge:''},
   {id:9,cat:'consoles',brand:'Meta',name:'Meta Quest 2 VR',price:498000,oldPrice:598000,rating:4,reviews:156,desc:'نظارة VR بلا أسلاك لتجربة واقع افتراضي حرة وسهلة',img:'1 (37).jfif',badge:''},
-  // PS4 - corrected image (was monitor)
-  // Handheld - Renamed Retro Handheld to GAMESIR X2 PRO
   {id:11,cat:'consoles',brand:'Valve',name:'Steam Deck OLED',price:898000,oldPrice:998000,rating:5,reviews:65,desc:'حاسوب gaming محمول يشغل مكتبة Steam الكاملة في راحة يدك',img:'1 (65).jfif',badge:'جديد'},
-  {id:12,cat:'consoles',name:'Portable Monitor for PS5 Gaming Display',price:598000,oldPrice:698000,rating:4,reviews:78,desc:'جهاز gaming سحابي محمول للعب Xbox وSteam في أي مكان',img:'1 (46).jfif',badge:''},
+  {id:12,cat:'consoles',brand:'',name:'Portable Monitor for PS5 Gaming Display',price:598000,oldPrice:698000,rating:4,reviews:78,desc:'جهاز gaming سحابي محمول للعب Xbox وSteam في أي مكان',img:'1 (46).jfif',badge:''},
   {id:13,cat:'consoles',brand:'GameSir',name:'GAMESIR X2 PRO',price:178000,oldPrice:240000,rating:4,reviews:134,desc:'جهاز ألعاب محمول متوافق مع الهواتف للعب السحابي',img:'1 (70).jfif',badge:''},
-  // Renamed Portable Gaming Device RGB to Legion Go
-    {id:19,cat:'consoles',brand:'Sony',name:'PlayStation 5 Portal',price:2398000,oldPrice:2998000,rating:5,reviews:118,desc:'لابتوب gaming احترافي بمعالج i7 وبطاقة RTX 4060 لأقصى أداء',img:'1 (34).jfif',badge:''},
+  {id:19,cat:'consoles',brand:'Sony',name:'PlayStation 5 Portal',price:2398000,oldPrice:2998000,rating:5,reviews:118,desc:'لابتوب gaming احترافي بمعالج i7 وبطاقة RTX 4060 لأقصى أداء',img:'1 (34).jfif',badge:''},
   {id:14,cat:'consoles',brand:'Lenovo',name:'Legion Go',price:258000,oldPrice:338000,rating:4,reviews:92,desc:'جهاز Legion Go محمول بشاشة IPS وإضاءة RGB جانبية',img:'1 (35).jfif',badge:''},
 
   // ===== COMPUTERS =====
@@ -797,7 +879,6 @@ const PRODUCTS = [
   {id:18,cat:'computers',brand:'Generic',name:'White Gaming PC Tower',price:1798000,oldPrice:2300000,rating:4,reviews:45,desc:'حاسوب gaming أبيض أنيق مع إضاءة RGB وهيكل زجاجي',img:'1 (30).png',badge:''},
 
   // ===== ACCESSORIES =====
-  // Controllers
   {id:49,cat:'accessories',brand:'',name:'SSD 512 for XBOX',price:110000,oldPrice:130000,rating:4,reviews:389,desc:'سعة تخزين لجهاز XBOX بسعة gb512 ',img:'1 (4).jfif',badge:'جديد'},
   {id:16,cat:'accessories',brand:'REDRAGON',name:'REDRAGON SPEAKER',price:1698000,oldPrice:2198000,rating:4,reviews:88,desc:'حاسوب gaming مخصص بهيكل زجاجي وإضاءة RGB متكاملة',img:'1 (10).png',badge:'خصم 23%'},
   {id:20,cat:'accessories',brand:'Sony',name:'DualSense PS5 Controller - Gold',price:158000,oldPrice:198000,rating:5,reviews:334,desc:'يد تحكم PS5 الذهبية الحصرية بتقنية اللمس التكيفي',img:'1 (8).png',badge:'حصري'},
@@ -808,43 +889,30 @@ const PRODUCTS = [
   {id:24,cat:'accessories',brand:'Microsoft',name:'Xbox Wireless Controller - Black',price:110000,oldPrice:150000,rating:4,reviews:221,desc:'يد تحكم Xbox لاسلكية بتصميم ارغونومي ومدة بطارية طويلة',img:'1 (3).jfif',badge:''},
   {id:25,cat:'accessories',brand:'Microsoft',name:'Xbox Wireless Controller - White',price:110000,oldPrice:150000,rating:4,reviews:178,desc:'يد تحكم Xbox بيضاء أنيقة بمقبض مريح',img:'1 (29).jfif',badge:''},
   {id:26,cat:'accessories',brand:'Microsoft',name:'Xbox Controller - Special Edition',price:150000,oldPrice:198000,rating:5,reviews:89,desc:'يد تحكم Xbox إصدار خاص بألوان فريدة',img:'1 (62).jfif',badge:'حصري'},
-  // Renamed Enhanced Wireless Controller PS5 to GameSir controller
   {id:27,cat:'accessories',brand:'GameSir',name:'GameSir Controller XBOX',price:90000,oldPrice:130000,rating:4,reviews:112,desc:'يد تحكم GameSir محسّنة لـ PS5 بأزرار إضافية',img:'1 (24).jfif',badge:''},
-  // Renamed Nintendo Switch Pro Controller Blue to GameSir controller
   {id:28,cat:'accessories',brand:'GameSir',name:'GameSir Controller XBOX',price:130000,oldPrice:170000,rating:5,reviews:94,desc:'يد تحكم GameSir لـ Nintendo Switch الاحترافية',img:'1 (69).jfif',badge:''},
-  // Mice
   {id:29,cat:'accessories',brand:'GravaStar',name:'GravaStar x pro',price:98000,oldPrice:150000,rating:5,reviews:267,desc:'ماوس gaming باستشعار دقيق 20000 DPI وإضاءة Chroma RGB',img:'1 (7).png',badge:''},
-  // Keyboards
   {id:30,cat:'accessories',brand:'Razer',name:'Razer Keyboard - Pink Edition',price:178000,oldPrice:258000,rating:5,reviews:198,desc:'لوحة مفاتيح ميكانيكية وردية احترافية',img:'1 (5).jfif',badge:''},
   {id:31,cat:'accessories',brand:'Redragon',name:'Redragon Keyboard Yellow RGB',price:110000,oldPrice:158000,rating:4,reviews:145,desc:'لوحة مفاتيح gaming صفراء بإضاءة RGB وأداء ميكانيكي',img:'1 (12).jfif',badge:''},
   {id:32,cat:'accessories',brand:'Generic',name:'Compact Keyboard Mint Green',price:90000,oldPrice:130000,rating:4,reviews:112,desc:'لوحة مفاتيح compact أخضر نعناعي بتصميم عصري',img:'1 (52).jfif',badge:''},
   {id:33,cat:'accessories',brand:'Generic',name:'TKL Keyboard Pink',price:98000,oldPrice:138000,rating:4,reviews:98,desc:'لوحة مفاتيح TKL وردية بمفاتيح ميكانيكية خفيفة',img:'1 (53).jfif',badge:''},
-  // Headsets
   {id:34,cat:'accessories',brand:'HyperX',name:'HyperX Gaming Headset H510',price:70000,oldPrice:110000,rating:4,reviews:312,desc:'سماعة gaming بصوت محيطي 7.1 وميكروفون لتصفية الضوضاء',img:'1 (15).jfif',badge:'خصم 36%'},
   {id:35,cat:'accessories',brand:'HyperX',name:'HyperX Cloud II Gaming Headset',price:130000,oldPrice:178000,rating:5,reviews:421,desc:'سماعة HyperX الاحترافية بصوت محيطي 7.1 وراحة فائقة',img:'1 (73).jfif',badge:''},
   {id:36,cat:'accessories',brand:'HyperX',name:'HyperX Cloud Wireless Headset',price:158000,oldPrice:218000,rating:5,reviews:234,desc:'سماعة HyperX لاسلكية بجودة صوت استثنائية',img:'1 (51).jfif',badge:''},
-  // Mousepads - corrected image (was hexagonal LED)
   {id:37,cat:'accessories',brand:'Redragon',name:'Redragon Mouse Pad XL RGB',price:44000,oldPrice:76000,rating:4,reviews:445,desc:'ماوس باد كبير الحجم بإضاءة RGB و14 وضع إضاءة',img:'1 (38).jfif',badge:''},
-  {id:38,cat:'accessories',brand:'Redragon',name:'Redragon Speed Mousepad Black XL',price:30000,oldPrice:50000,rating:4,reviews:312,desc:'ماوس باد أسود XL بسطح ناعم لأقصى دقة',img:'1 (38).jfif',badge:''},
-  // Racing Wheel
   {id:39,cat:'accessories',brand:'Logitech',name:'Logitech G29 Racing Wheel + Pedals',price:378000,oldPrice:498000,rating:5,reviews:88,desc:'عجلة قيادة احترافية مع دواسات كاملة وتغذية راجعة قوية',img:'1 (36).jfif',badge:''},
   {id:40,cat:'accessories',brand:'PXN',name:'PXN Racing Wheel V9',price:258000,oldPrice:358000,rating:4,reviews:67,desc:'عجلة قيادة PXN مع دواسات وناقل سرعات لتجربة سباق واقعية',img:'1 (48).jfif',badge:''},
-  // USB Hub
   {id:41,cat:'accessories',brand:'Generic',name:'Gaming USB-C Hub 7-in-1',price:36000,oldPrice:60000,rating:4,reviews:177,desc:'هاب 7 منافذ - USB، HDMI، SD card وأكثر',img:'1 (14).jfif',badge:''},
   {id:42,cat:'accessories',brand:'Generic',name:'USB-C Hub Slim 6-in-1',price:30000,oldPrice:50000,rating:4,reviews:134,desc:'هاب USB-C نحيل 6 منافذ للحواسيب واللابتوبات',img:'1 (64).jfif',badge:''},
-  // Controller stand
   {id:43,cat:'accessories',brand:'Generic',name:'Dual Controller Charging Stand',price:50000,oldPrice:80000,rating:4,reviews:156,desc:'حامل شحن مزدوج لأيدي التحكم بإضاءة LED',img:'1 (7).jfif',badge:''},
-  // Renamed Laptop Cooling Pad RGB to pc Cases
   {id:44,cat:'accessories',brand:'Generic',name:'PC Cases Gaming RGB',price:40000,oldPrice:70000,rating:4,reviews:198,desc:'كيس حاسوب gaming بإضاءة RGB وتهوية ممتازة',img:'1 (14).png',badge:''},
-  // Xbox controller set
-  // Razer mouse Xbox
   {id:47,cat:'accessories',brand:'Razer',name:'Razer Gaming Mouse - Xbox Edition',price:118000,oldPrice:170000,rating:5,reviews:112,desc:'ماوس Razer بتصميم Xbox حصري مع استشعار 20K DPI',img:'1 (49).jfif',badge:'حصري'},
 
   // ===== GAMES =====
-  {id:66,cat:'games',brand:'EA Sports',name:'EA Sports FC26-ps5',price:598000,oldPrice:798000,rating:5,reviews:145,desc:'لعبة كرة قدم ممتعو وسلسة ل جهاز ps5',img:'1 (22).jfif',badge:''},
+  {id:66,cat:'games',brand:'EA Sports',name:'EA Sports FC26-ps5',price:598000,oldPrice:798000,rating:5,reviews:145,desc:'لعبة كرة قدم ممتعة وسلسة لجهاز ps5',img:'1 (22).jfif',badge:''},
   {id:48,cat:'games',brand:'FromSoftware',name:'Elden Ring - Xbox Edition',price:90000,oldPrice:120000,rating:5,reviews:512,desc:'لعبة أكشن RPG أسطورية من صانعي Dark Souls بعالم مفتوح ضخم',img:'1 (23).jfif',badge:''},
   {id:50,cat:'games',brand:'EA Sports',name:'EA Sports FC 26 - PS4',price:90000,oldPrice:110000,rating:4,reviews:267,desc:'نفس التجربة المميزة لـ FC 26 لجهاز PlayStation 4',img:'1 (27).jfif',badge:''},
-  {id:51,cat:'games',brand:'Capcom',name:'Pragmata - PS5',price:96000,oldPrice:130000,rating:5,reviews:198,desc:'لعبة فظاء و خيال علمي ',img:'1 (47).jfif',badge:''},
+  {id:51,cat:'games',brand:'Capcom',name:'Pragmata - PS5',price:96000,oldPrice:130000,rating:5,reviews:198,desc:'لعبة فضاء وخيال علمي',img:'1 (47).jfif',badge:''},
   {id:52,cat:'games',brand:'Square Enix',name:'Fatal Frame 2 - Nintendo Switch',price:76000,oldPrice:110000,rating:5,reviews:145,desc:'Final Fantasy على Nintendo Switch للعب في أي مكان',img:'1 (26).jfif',badge:''},
   {id:53,cat:'games',brand:'Bethesda',name:'Starfield - Xbox Series X',price:98000,oldPrice:120000,rating:4,reviews:203,desc:'استكشف الفضاء في أضخم لعبة من Bethesda مع +1000 كوكب',img:'1 (61).jfif',badge:''},
   {id:54,cat:'games',brand:'Sony',name:'Ghost of Yotei - PS5',price:110000,oldPrice:138000,rating:5,reviews:445,desc:'مغامرة سامورائي استثنائية في اليابان القديمة بجرافيكس مبهر',img:'1 (31).jfif',badge:''},
@@ -856,9 +924,9 @@ const PRODUCTS = [
   {id:60,cat:'games',brand:'2K Sports',name:'WWE 2K26 - PS5',price:110000,oldPrice:130000,rating:4,reviews:178,desc:'أحدث إصدار من لعبة المصارعة الأشهر WWE 2K26',img:'1 (66).jfif',badge:'جديد'},
   {id:61,cat:'games',brand:'Bandai',name:'Plague Tale Requiem - PS5',price:84000,oldPrice:120000,rating:5,reviews:156,desc:'قصة عاطفية ومشوقة في أوروبا القرون الوسطى المليئة بالجرذان',img:'1 (8).jfif',badge:''},
   {id:62,cat:'games',brand:'Mojang',name:'Minecraft - PS5 Edition',price:60000,oldPrice:80000,rating:5,reviews:534,desc:'العبة الأكثر مبيعاً في تاريخ الألعاب - ابنِ وأبدع بلا حدود',img:'1 (5).png',badge:''},
-  {id:63,cat:'games',brand:'EA',name:'It Takes Two - PS4',price:56000,oldPrice:80000,rating:5,reviews:422,desc:'لعبة تعاون ثنائية حائزة على جائزة Game of the Year',img:'1 (74).jfif',badge:''},
+  {id:63,cat:'games',brand:'EA Sports',name:'It Takes Two - ps5',price:56000,oldPrice:80000,rating:5,reviews:422,desc:'لعبة تعاون ثنائية حائزة على جائزة Game of the Year',img:'1 (74).jfif',badge:''},
   {id:64,cat:'games',brand:'SCS Software',name:'Truck Simulator - PC',price:50000,oldPrice:70000,rating:4,reviews:267,desc:'محاكي الشاحنات الأشهر في العالم بخرائط أوروبية ضخمة',img:'1 (58).jfif',badge:''},
-  {id:65,cat:'games',brand:'LEGO',name:'Pokémon Scarlet - LEGO',price:110000,oldPrice:130000,rating:4,reviews:389,desc:'لعبة تركيب ليجو للاطفال جميلة و منمية للذكاء',img:'1 (11).png',badge:''},
+  {id:65,cat:'games',brand:'LEGO',name:'Pokémon Scarlet - LEGO',price:110000,oldPrice:130000,rating:4,reviews:389,desc:'لعبة تركيب ليجو للأطفال جميلة ومنمية للذكاء',img:'1 (11).png',badge:''},
 
   // ===== CHAIRS =====
   {id:67,cat:'chairs',brand:'Generic',name:'Racing Style Gaming Chair - White',price:298000,oldPrice:440000,rating:4,reviews:234,desc:'كرسي بتصميم سباقات أبيض مريح مع إمكانية الإمالة 180 درجة',img:'1 (23).png',badge:'خصم 32%'},
@@ -867,16 +935,11 @@ const PRODUCTS = [
 
   // ===== MONITORS =====
   {id:70,cat:'monitors',brand:'ASUS',name:'ASUS TUF Gaming Monitor 27" 165Hz',price:358000,oldPrice:478000,rating:5,reviews:122,desc:'شاشة gaming 27 بوصة 165Hz IPS بوقت استجابة 1ms وألوان دقيقة',img:'1 (33).jfif',badge:''},
-  {id:10,cat:'monitors',brand:'DERDSKULL',name:'MONITOR DERDSKULL',price:398000,oldPrice:498000,rating:4,reviews:312,desc:'شاشة سريعة الاستجابة بدقة عالية وبسعر منافس ',img:'1 (18).png',badge:'خصم 20%'},
+  {id:10,cat:'monitors',brand:'DERDSKULL',name:'MONITOR DERDSKULL',price:398000,oldPrice:498000,rating:4,reviews:312,desc:'شاشة سريعة الاستجابة بدقة عالية وبسعر منافس',img:'1 (18).png',badge:'خصم 20%'},
   {id:71,cat:'monitors',brand:'Generic',name:'Gaming Monitor 27" 144Hz IPS',price:278000,oldPrice:378000,rating:4,reviews:98,desc:'شاشة gaming 27 بوصة بتردد 144Hz وألوان IPS واسعة',img:'1 (39).jfif',badge:''},
 
-  // Switch Carry Case (from original)
   {id:80,cat:'accessories',brand:'Generic',name:'Nintendo Switch Carry Case',price:40000,oldPrice:60000,rating:4,reviews:178,desc:'حافظة حمل Nintendo Switch صلبة مع أماكن للألعاب',img:'1 (32).jfif',badge:''},
-
-  // SSD Storage
   {id:77,cat:'accessories',brand:'Generic',name:'External SSD 1TB - Black',price:98000,oldPrice:138000,rating:5,reviews:145,desc:'قرص SSD خارجي 1TB بسرعات نقل فائقة للـ PS5 وPC',img:'1 (6).jfif',badge:''},
-
-  // Redragon Controller
   {id:78,cat:'accessories',brand:'Redragon',name:'Redragon Wired Controller - Black',price:50000,oldPrice:80000,rating:4,reviews:201,desc:'يد تحكم سلكية من Redragon متوافقة مع PC وPS3',img:'1 (16).jfif',badge:''},
 ];
 
@@ -912,7 +975,6 @@ function setTheme(t) {
   }
   localStorage.setItem('theme', t);
 }
-// Load saved theme
 (function(){
   const t = localStorage.getItem('theme');
   if(t) setTheme(t);
@@ -997,7 +1059,6 @@ function renderProducts() {
     </div>
   `).join('');
 
-  // Pagination
   const totalPages = Math.ceil(total/PER_PAGE);
   let pages = '';
   if(totalPages>1){
@@ -1011,7 +1072,6 @@ function renderProducts() {
   document.getElementById('pagination').innerHTML=pages;
 }
 
-// Format Iraqi Dinar
 function formatIQD(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' د.ع';
 }
